@@ -1,3 +1,6 @@
 [submodule "lesson_1/mini_django"]
 	path = lesson_1/mini_django
 	url = https://github.com/csev/mini_django
+[submodule "dj4e-samples"]
+	path = dj4e-samples
+	url = https://github.com/csev/dj4e-samples
