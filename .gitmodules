@@ -1,0 +1,3 @@
+[submodule "lesson_1/mini_django"]
+	path = lesson_1/mini_django
+	url = https://github.com/csev/mini_django
