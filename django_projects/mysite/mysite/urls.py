@@ -8,11 +8,14 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SITE_ROOT = os.path.join(BASE_DIR, "site")
 EXAMPLE_ROOT = os.path.join(BASE_DIR, "examples")
 
+app_name = "root"
 urlpatterns = [
     path("", include("home.urls")),
     path("hello/", include("hello.urls")),
-    path("admin/", admin.site.urls),
     path("polls/", include("polls.urls")),
+    path("autos/", include("autos.urls")),
+    path("admin/", admin.site.urls),
+    path("accounts/", include("django.contrib.auth.urls")),
     re_path(
         r"^site/(?P<path>.*)$",
         serve,
@@ -23,6 +26,6 @@ urlpatterns = [
         r"^examples/(?P<path>.*)$",
         serve,
         {"document_root": EXAMPLE_ROOT, "show_indexes": True},
-        name="site_path",
+        name="example_path",
     ),
 ]

@@ -37,9 +37,12 @@ CSRF_TRUSTEDDORIGINS = [
 # Application definition
 
 INSTALLED_APPS = [
+    # my apps
+    "autos.apps.AutosConfig",
     "home.apps.HomeConfig",
     "hello.apps.HelloConfig",
     "polls.apps.PollsConfig",
+    # django libs
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",

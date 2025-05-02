@@ -1,21 +1,21 @@
-<!DOCTYPE
-<html>
-    <title>Django TestApp Index</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css"
-          rel="stylesheet"
-          integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7"
-          crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
-            crossorigin="anonymous"></script>
-</html>
-<body>
+{% extends "base_bootstrap.html" %}
+{% block title %}
+    Django TestApp Index
+{% endblock title %}
+{% block content %}
     <h1>Django TestApp Index</h1>
     <ul>
+        {#These regex paths have to inserted manually b/c my current templates expects one positional paramater#}
+        <li>
+            <a href="{% url 'site_path' '' %}">Example simple HTML</a>
+        </li>
+        <li>
+            <a href="{% url 'example_path' '' %}">Example CSS</a>
+        </li>
         {% for url_path, label in reverse_urls %}
             <li>
                 <a href="{% url url_path %}">{{ label }}</a>
             </li>
         {% endfor %}
     </ul>
-</body>
+{% endblock content %}
