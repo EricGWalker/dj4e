@@ -4,8 +4,8 @@ profile = "django"
 [tool.pyright]
 venvPath = "/home/eric/Documents/programming/django/dj4e/"
 venv = ".venv"
-verboseOutput = true
 typeCheckingMode = "basic"
 pythonVersion = "3.12"
 extraPaths = ["/home/eric/Documents/programming/django/dj4e/.venv/lib/python3.12/site-packages/"]
-
+# useLibraryCodeForTypes = true
+# reportMissingTypeStubs = false
