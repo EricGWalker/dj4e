@@ -9,6 +9,8 @@ SITE_ROOT = os.path.join(BASE_DIR, "site")
 EXAMPLE_ROOT = os.path.join(BASE_DIR, "examples")
 
 urlpatterns = [
+    path("", include("home.urls")),
+    path("hello/", include("hello.urls")),
     path("admin/", admin.site.urls),
     path("polls/", include("polls.urls")),
     re_path(

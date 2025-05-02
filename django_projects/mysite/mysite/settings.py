@@ -24,13 +24,21 @@ SECRET_KEY = "django-insecure-@tvru-=r_upuyzyu*z)a19f*_eo!$ew!dsv&tj_j$a-t(0(pvs
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-
-ALLOWED_HOSTS = ["*"]
+SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
+ALLOWED_HOSTS = ["firelink.local", "192.168.10.30", "localhost", "walkerrealm.com"]
+CSRF_TRUSTEDDORIGINS = [
+    "https://walkerrealm.com",
+    "http://firelink.local",
+    "http://localhost",
+    "http://192.168.10.30",
+]
 
 
 # Application definition
 
 INSTALLED_APPS = [
+    "home.apps.HomeConfig",
+    "hello.apps.HelloConfig",
     "polls.apps.PollsConfig",
     "django.contrib.admin",
     "django.contrib.auth",
@@ -55,7 +63,7 @@ ROOT_URLCONF = "mysite.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [],
+        "DIRS": [BASE_DIR.joinpath("mysite/templates/")],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
