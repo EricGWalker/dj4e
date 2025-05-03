@@ -10,5 +10,5 @@ class IndexView(generic.ListView):
         return [
             ("polls:index", "A Polls Application"),
             ("hello:index", "Cookies And Sessions"),
-            ("autos:index", "Autos CRUD"),
+            ("autos:all", "Autos CRUD"),
         ]
